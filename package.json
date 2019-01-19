@@ -19,6 +19,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "msal": "^0.2.4",
     "react": "^16.4.0",
     "webpack": "^4.12.0"
   },
