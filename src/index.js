@@ -1,5 +1,6 @@
 import React from "react";
 import { UserAgentApplication } from "msal";
+import "./style.css";
 
 const defaultButtonText = "Sign in with Office 365";
 const graphScopes = ["user.read"];
@@ -43,7 +44,6 @@ export default class OfficeLogin extends React.Component {
       .then(accessToken => {
         if (accessToken) {
           this.props.isLoading(false);
-          this.props.onSuccess(accessToken, msal.getUser().name);
         }
       })
       .catch(err => {
@@ -60,7 +60,9 @@ export default class OfficeLogin extends React.Component {
     const buttonText = this.props.text || defaultButtonText;
     return (
       <div>
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <button className="OfficeLoginButton" onClick={this.handleClick}>
+          {buttonText}
+        </button>
       </div>
     );
   }

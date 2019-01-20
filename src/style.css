@@ -1,0 +1,24 @@
+.OfficeLoginButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 4px 0 #DFE6ED;
+    color: white;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: #2870C1;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    padding: 0.75rem 2rem;
+}
+
+.OfficeLoginButton:hover {
+    background-color: #195EAC;
+}
+
+.OfficeLoginButton:active {
+    background-color: #0A4B95;
+}
