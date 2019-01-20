@@ -1,6 +1,6 @@
 import React from "react";
 import { UserAgentApplication } from "msal";
-import MicrosoftLogo from "./microsoft.svg";
+
 const defaultButtonText = "Sign in with Office 365";
 const graphScopes = ["user.read"];
 
@@ -26,7 +26,11 @@ export default class OfficeLogin extends React.Component {
 
   acquireTokenRedirectCallBack = (errorDesc, token, error, tokenType) => {
     if (!token) {
-      console.log(error + ":" + errorDesc);
+      console.log(
+        "​OfficeLogin -> acquireTokenRedirectCallBack -> errorDesc",
+        errorDesc
+      );
+      throw err;
     }
   };
 
