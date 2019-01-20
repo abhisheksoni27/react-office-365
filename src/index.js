@@ -18,7 +18,7 @@ export default class OfficeLogin extends React.Component {
       {
         storeAuthStateInCookie: true,
         cacheLocation: "localStorage",
-        redirectUri: "http://localhost:3000"
+        redirectUri: props.redirectURL
       }
     );
 
@@ -27,10 +27,6 @@ export default class OfficeLogin extends React.Component {
 
   acquireTokenRedirectCallBack = (errorDesc, token, error, tokenType) => {
     if (!token) {
-      console.log(
-        "​OfficeLogin -> acquireTokenRedirectCallBack -> errorDesc",
-        errorDesc
-      );
       throw err;
     }
   };
@@ -43,7 +39,7 @@ export default class OfficeLogin extends React.Component {
       })
       .then(accessToken => {
         if (accessToken) {
-          this.props.isLoading(false);
+          this.props.onSuccess(accessToken);
         }
       })
       .catch(err => {
