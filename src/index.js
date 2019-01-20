@@ -1,6 +1,6 @@
 import React from "react";
 import { UserAgentApplication } from "msal";
-
+import MicrosoftLogo from "./microsoft.svg";
 const defaultButtonText = "Sign in with Office 365";
 const graphScopes = ["user.read"];
 
@@ -10,7 +10,7 @@ export default class OfficeLogin extends React.Component {
 
     const applicationConfig = { clientID: props.clientID };
 
-    const myMSALObj = new UserAgentApplication(
+    this.msal = new UserAgentApplication(
       applicationConfig.clientID,
       null,
       this.acquireTokenRedirectCallBack,
@@ -21,7 +21,7 @@ export default class OfficeLogin extends React.Component {
       }
     );
 
-    this.state = { msal: myMSALObj };
+    this.state = { accessToken: null };
   }
 
   acquireTokenRedirectCallBack = (errorDesc, token, error, tokenType) => {
@@ -31,28 +31,33 @@ export default class OfficeLogin extends React.Component {
   };
 
   signIn = () => {
-    const { msal } = this.state;
-
-    msal
-      .acquireTokenSilent(graphScopes)
-      .then(accessToken => {})
-      .catch(error => {
-        return msal.acquireTokenPopup(graphScopes);
+    this.msal
+      .loginPopup(graphScopes)
+      .then(idToken => {
+        return this.msal.acquireTokenSilent(graphScopes);
       })
-      .then(accessToken => {})
-      .catch(error => {
-        return msal.loginPopup(graphScopes);
+      .then(accessToken => {
+        if (accessToken) {
+          this.props.isLoading(false);
+          this.props.onSuccess(accessToken, msal.getUser().name);
+        }
       })
-      .then(accessToken => {});
-    //AcquireTokenSilent Failure, send an interactive request.
+      .catch(err => {
+        this.props.onFailure(err);
+      });
   };
 
   handleClick = () => {
+    this.props.isLoading(true);
     this.signIn();
   };
 
   render() {
     const buttonText = this.props.text || defaultButtonText;
-    return <button onClick={this.handleClick}>{buttonText}</button>;
+    return (
+      <div>
+        <button onClick={this.handleClick}>{buttonText}</button>
+      </div>
+    );
   }
 }
