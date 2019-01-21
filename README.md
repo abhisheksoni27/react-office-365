@@ -1,4 +1,4 @@
-## React Color Component
+## React Office 365 Auth Component
 
 ### Installation
 
