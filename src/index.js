@@ -55,7 +55,20 @@ export default class OfficeLogin extends React.Component {
   render() {
     const buttonText = this.props.text || defaultButtonText;
     return (
-      <div>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center"
+        }}
+      >
+        <img
+          width={25}
+          height={25}
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png"
+          alt="office 365"
+        />
+
         <button className="OfficeLoginButton" onClick={this.handleClick}>
           {buttonText}
         </button>
