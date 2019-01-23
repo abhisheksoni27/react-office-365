@@ -56,6 +56,7 @@ export default class OfficeLogin extends React.Component {
     const buttonText = this.props.text || defaultButtonText;
     return (
       <div>
+        <span class="OfficeLoginImage" />
         <button className="OfficeLoginButton" onClick={this.handleClick}>
           {buttonText}
         </button>

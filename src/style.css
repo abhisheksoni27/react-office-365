@@ -22,3 +22,7 @@
 .OfficeLoginButton:active {
     background-color: #0A4B95;
 }
+
+.OfficeLoginImage {
+    background: url('https://gxcuf89792.i.lithium.com/t5/image/serverpage/image-id/1296i7768C2951837E376/image-size/small');
+}
