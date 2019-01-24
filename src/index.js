@@ -2,7 +2,7 @@ import React from "react";
 import { UserAgentApplication } from "msal";
 import "./style.css";
 
-const defaultButtonText = "Sign in with Office 365";
+const defaultButtonText = "Continue with Office 365";
 const graphScopes = ["user.read"];
 
 export default class OfficeLogin extends React.Component {
