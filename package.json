@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "./node_modules/.bin/webpack --watch",
-    "build": "./node_modules/.bin/webpack"
+    "build": "./node_modules/.bin/webpack",
+    "publish": "npm version patch;npm run publish;"
   },
   "author": {
     "name": "abhisheksoni27"
