@@ -1,7 +1,7 @@
 import React from "react";
 import { UserAgentApplication } from "msal";
 import "./style.css";
-const defaultButtonText = "Continue with Office 365";
+const defaultButtonText = "Login with Office 365";
 const graphScopes = ["user.read"];
 export default class OfficeLogin extends React.Component {
   constructor(props) {
@@ -50,20 +50,9 @@ export default class OfficeLogin extends React.Component {
   render() {
     const buttonText = this.props.text || defaultButtonText;
     return (
-      <div
-        style={{
-          display: "flex"
-        }}
-      >
-        {" "}
-        <img
-          src="https://gxcuf89792.i.lithium.com/t5/image/serverpage/image-id/1296i7768C2951837E376/image-size/small"
-          class="OfficeLoginImage"
-        />{" "}
-        <button className="OfficeLoginButton" onClick={this.handleClick}>
-          {" "}
-          {buttonText}
-        </button>{" "}
+      <div className="Office-container" onClick={this.handleClick}>
+        <div className="Office-image" />
+        <div className="Office-button-text">{buttonText}</div>
       </div>
     );
   }

@@ -1,33 +1,37 @@
-.OfficeLoginButton {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #ea3e23;
-    text-decoration: none;
-    background: white;
-    outline: none;
-    border: none;
-    border: 1px solid #ea3e23;
-    border-left: none;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    padding: 0.75rem 1rem;
-    padding-left: 0.75rem;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+.Office-container {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.OfficeLoginButton:hover {
-    background-color: #ea3e23;
-    color: white;
+.Office-image {
+  display: inline-block;
+  border: 1px solid #ea3e23;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(https://gxcuf89792.i.lithium.com/t5/image/serverpage/image-id/1296i7768C2951837E376/image-size/small);
+  border-radius: 4px;
+  background-size: cover;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
-.OfficeLoginImage {
-    width: auto;
-    height: 3rem;
-    background-repeat: round;
-    border: 1px solid #ea3e23;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
+.Office-button-text {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #ea3e23;
+  padding: 0.5rem;
+  color: #ea3e23;
+  background: white;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.Office-button-text:hover {
+  color: white;
+  background: #ea3e23;
+  border: 1px solid #ea3e23;
 }
