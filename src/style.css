@@ -1,28 +1,33 @@
 .OfficeLoginButton {
-    padding: 0.5rem 1rem;
     font-size: 0.875rem;
     font-weight: 700;
-    border-radius: 0.25rem;
-    box-shadow: 0 1px 4px 0 #DFE6ED;
-    color: white;
-    -webkit-text-decoration: none;
+    color: #ea3e23;
     text-decoration: none;
+    background: white;
     outline: none;
     border: none;
-    background-color: #ea3e23;
+    border: 1px solid #ea3e23;
+    border-left: none;
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    padding: 0.75rem 2rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0.75rem 1rem;
+    padding-left: 0.75rem;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
 }
 
 .OfficeLoginButton:hover {
-    background-color: #195EAC;
-}
-
-.OfficeLoginButton:active {
-    background-color: #0A4B95;
+    background-color: #ea3e23;
+    color: white;
 }
 
 .OfficeLoginImage {
-    background-image: url('https://gxcuf89792.i.lithium.com/t5/image/serverpage/image-id/1296i7768C2951837E376/image-size/small')
+    width: auto;
+    height: 3rem;
+    background-repeat: round;
+    border: 1px solid #ea3e23;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
 }
